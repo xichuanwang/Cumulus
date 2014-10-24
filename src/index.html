@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Cumulus - CSS3 Weather Patterns</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+
+        .lightning {
+            border-top: 50px solid deepskyblue;
+            border-left: 10px solid transparent;
+            border-right: 5px solid transparent;
+            height: 0;
+            width: 7px;
+            display: inline-block;
+            position: absolute;
+            -webkit-transform: rotateZ(30deg) translate3d( 40px, 0px, 0);
+            z-index: 1;
+        }
+
+        .lightning:after{
+            content: '';
+            border-top: 52px solid deepskyblue;
+            border-left: 10px solid transparent;
+            border-right: 5px solid transparent;
+            height: 0;
+            width: 1px;
+            top: -10px;
+            left: -5px;
+            -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+            display: inline-block;
+            position: absolute;
+        }
+
+        .lightning.small-left{
+            opacity: 0.3;
+            -webkit-transform: scale(0.6) rotateZ(30deg) translate3d( 20px, 20px, 0);
+            transform: scale(0.6) rotateZ(30deg) translate3d( 20px, 20px, 0);
+        }
+
+        .lightning.small-right{
+            opacity: 0.7;
+            -webkit-transform: scale(0.6) rotateZ(30deg) translate3d( 120px, -10px, 0);
+            transform: scale(0.6) rotateZ(30deg) translate3d( 120px, -10px, 0);
+        }
+
+        @-webkit-keyframes lightstrike {
+            0%{
+                
+            }
+            100%{
+
+            }
+        }
+
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <h1 id="title">Cumulus</h1>
+            <p>CSS3 Weather Patterns</p>
+        </header>
+
+        <ul id="weather">
+            
+            <li>
+                <div class="cloud">
+                    <span class="tear first"></span>
+                    <span class="tear middle"></span>
+                    <span class="tear last"></span>
+                </div>
+            </li>
+            
+            <li>
+                <div class="weathergroup">
+                     <span class="sun rising">
+                        <span class="sunrays"></span> 
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                        <span class="sunrays"></span>
+                    </span>
+                    <div class="cloud"></div>
+                </div>
+            </li>
+            <li>
+                <span class="sun">
+                    <span class="sunrays"></span> 
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                    <span class="sunrays"></span>
+                </span>
+            </li>
+            <li>
+                <div class="cloud">
+                    <span class="snow flake-test"></span>
+                    <span class="snow flake-sm"></span>
+                    <span class="snow flake-med"></span>
+                    <span class="snow flake-lg"></span>
+                </div>
+            </li>
+
+             <li>
+                <div class="cloud">
+                    <span class="lightning"></span>
+                    <span class="lightning small-left"></span>
+                    <span class="lightning small-right"></span>
+                </div>
+            </li>
+
+        </ul>
+
+        <script src="js/vendor/jquery-1.10.2.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>

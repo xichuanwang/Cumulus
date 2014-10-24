@@ -1,0 +1,402 @@
+/* line 1, scss/main.scss */
+HTML {
+  height: 100%;
+}
+
+/* line 5, scss/main.scss */
+BODY {
+  background: -webkit-linear-gradient(top, #c9dbe9 0%, white 100%);
+  background: linear-gradient(top, #c9dbe9 0%, #ffffff 100%);
+  background: -moz-linear-gradient(top, #c9dbe9 0%, white 100%);
+}
+
+/* line 11, scss/main.scss */
+HEADER {
+  margin-top: 50px;
+  margin-left: 100px;
+}
+/* line 15, scss/main.scss */
+HEADER p {
+  color: darkblue;
+}
+/* line 19, scss/main.scss */
+HEADER #title {
+  font-size: 3em;
+  color: white;
+  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* line 37, scss/main.scss */
+h1 {
+  margin: 0;
+}
+
+/* line 41, scss/main.scss */
+#weather {
+  margin: 100px;
+  list-style: none;
+}
+/* line 45, scss/main.scss */
+#weather LI {
+  float: left;
+  width: 33%;
+  min-height: 200px;
+  min-width: 110px;
+  position: relative;
+}
+
+/* line 54, scss/main.scss */
+.weathergroup {
+  position: relative;
+}
+
+/* line 3, scss/_cloud.scss */
+.cloud {
+  width: 100px;
+  height: 50px;
+  position: relative;
+  background: white;
+  border-bottom: 2px solid #6CF;
+  border-radius: 50% 50% 50% 50%;
+  -moz-border-radius: 50% 50% 50% 50%;
+  -webkit-border-radius: 50% 50% 50% 50%;
+}
+/* line 12, scss/_cloud.scss */
+.cloud:after, .cloud:before {
+  content: '';
+  position: absolute;
+  background: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 50%;
+  -moz-border-radius: 50% 50% 50% 50%;
+  -webkit-border-radius: 50% 50% 50% 50%;
+}
+/* line 21, scss/_cloud.scss */
+.cloud:before {
+  right: 25px;
+  top: -18px;
+}
+/* line 26, scss/_cloud.scss */
+.cloud:after {
+  right: -5px;
+  top: -26px;
+}
+
+/* line 2, scss/_rain.scss */
+.tear {
+  margin: 0 auto;
+  top: 0px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #6CF;
+  border: none;
+  top: 60px;
+  opacity: 1;
+  border-radius: 0 50% 50% 50%;
+  -moz-border-radius: 0 50% 50% 50%;
+  -webkit-border-radius: 0 50% 50% 50%;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+  animation: raining 1s infinite;
+  -webkit-animation: raining 1s infinite;
+  -moz-animation: raining 1s infinite;
+}
+/* line 16, scss/_rain.scss */
+.tear.first {
+  left: 10%;
+}
+/* line 20, scss/_rain.scss */
+.tear.middle {
+  left: 35%;
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+}
+/* line 26, scss/_rain.scss */
+.tear.last {
+  left: 60%;
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+}
+
+@-webkit-keyframes raining {
+  /* line 34, scss/_rain.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 37, scss/_rain.scss */
+  100% {
+    opacity: 0;
+    top: 70px;
+  }
+}
+
+@keyframes raining {
+  /* line 44, scss/_rain.scss */
+  0% {
+    opacity: 1;
+  }
+
+  /* line 47, scss/_rain.scss */
+  100% {
+    opacity: 0;
+    top: 70px;
+  }
+}
+
+/* line 1, scss/_sun.scss */
+.sun {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: -webkit-linear-gradient(top, gold 0%, orange 100%);
+  background: linear-gradient(top, #ffd700 0%, #ffa500 100%);
+  background: -moz-linear-gradient(top, gold 0%, orange 100%);
+  position: absolute;
+  animation: sunshine 3s infinite linear;
+  -webkit-animation: sunshine 3s infinite linear;
+  -moz-animation: sunshine 3s infinite linear;
+}
+/* line 11, scss/_sun.scss */
+.sun.rising {
+  animation: risingsun 6s infinite linear;
+  -webkit-animation: risingsun 6s infinite linear;
+  -moz-animation: risingsun 6s infinite linear;
+}
+/* line 14, scss/_sun.scss */
+.sun .sunrays {
+  width: 10px;
+  height: 20px;
+  background: orange;
+  position: absolute;
+  border-radius: 3px;
+}
+/* line 21, scss/_sun.scss */
+.sun .sunrays:nth-child(1) {
+  top: -50%;
+  left: 40%;
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+}
+/* line 27, scss/_sun.scss */
+.sun .sunrays:nth-child(2) {
+  left: 100%;
+  top: -25%;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+/* line 33, scss/_sun.scss */
+.sun .sunrays:nth-child(3) {
+  left: 125%;
+  top: 30%;
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+/* line 39, scss/_sun.scss */
+.sun .sunrays:nth-child(4) {
+  left: 100%;
+  top: 90%;
+  -webkit-transform: rotateZ(135deg);
+  -moz-transform: rotateZ(135deg);
+  transform: rotateZ(135deg);
+}
+/* line 45, scss/_sun.scss */
+.sun .sunrays:nth-child(5) {
+  left: 40%;
+  top: 115%;
+  -webkit-transform: rotateZ(0deg);
+  -moz-transform: rotateZ(0deg);
+  transform: rotateZ(0deg);
+}
+/* line 51, scss/_sun.scss */
+.sun .sunrays:nth-child(6) {
+  left: -20%;
+  top: 90%;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+/* line 57, scss/_sun.scss */
+.sun .sunrays:nth-child(7) {
+  left: -40%;
+  top: 30%;
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+/* line 63, scss/_sun.scss */
+.sun .sunrays:nth-child(8) {
+  left: -25%;
+  top: -25%;
+  -webkit-transform: rotateZ(135deg);
+  -moz-transform: rotateZ(135deg);
+  transform: rotateZ(135deg);
+}
+
+@keyframes risingsun {
+  /* line 72, scss/_sun.scss */
+  0% {
+    opacity: 0;
+    top: 0px;
+    transform: rotateZ(0deg);
+  }
+
+  /* line 77, scss/_sun.scss */
+  50% {
+    opacity: 1;
+    top: -35px;
+    transform: rotateZ(360deg);
+  }
+
+  /* line 82, scss/_sun.scss */
+  100% {
+    opacity: 0;
+    top: 0px;
+    transform: rotateZ(720deg);
+  }
+}
+
+@-webkit-keyframes risingsun {
+  /* line 90, scss/_sun.scss */
+  0% {
+    opacity: 0;
+    top: 0px;
+    -webkit-transform: rotateZ(0deg);
+  }
+
+  /* line 95, scss/_sun.scss */
+  50% {
+    opacity: 1;
+    top: -35px;
+    -webkit-transform: rotateZ(360deg);
+  }
+
+  /* line 101, scss/_sun.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: rotateZ(720deg);
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes sunshine {
+  /* line 109, scss/_sun.scss */
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+
+  /* line 112, scss/_sun.scss */
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+
+@keyframes sunshine {
+  /* line 118, scss/_sun.scss */
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  /* line 121, scss/_sun.scss */
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* line 1, scss/_snow.scss */
+.snow {
+  position: absolute;
+  display: inline-block;
+  z-index: -1;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+/* line 11, scss/_snow.scss */
+.snow.flake-sm {
+  background-color: #6CF;
+  opacity: 0.5;
+  height: 10px;
+  width: 10px;
+  -webkit-transform: translate3d(20px, 40px, 0);
+  transform: translate3d(20px, 40px, 0);
+  -webkit-animation: snowing-sm 1s linear infinite;
+  animation: snowing-sm 1s linear infinite;
+}
+/* line 22, scss/_snow.scss */
+.snow.flake-med {
+  background-color: #6BF;
+  height: 15px;
+  width: 15px;
+  opacity: 0.7;
+  -webkit-transform: translate3d(40px, 20px, 0);
+  transform: translate3d(40px, 20px, 0);
+  -webkit-animation: snowing-med 2s 0.3s linear infinite;
+  animation: snowing-med 2s linear 0.3s infinite;
+}
+/* line 33, scss/_snow.scss */
+.snow.flake-lg {
+  background-color: #6CF;
+  height: 20px;
+  width: 20px;
+  opacity: 1;
+  -webkit-transform: translate3d(70px, 20px, 0);
+  transform: translate3d(70px, 20px, 0);
+  -webkit-animation: snowing-lg 1.5s 0.2s linear infinite;
+  animation: snowing-lg 1.5s linear 0.2s infinite;
+}
+
+@-webkit-keyframes snowing-lg {
+  /* line 46, scss/_snow.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(70px, 20px, 0);
+  }
+
+  /* line 50, scss/_snow.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(40px, 100px, 0);
+  }
+}
+
+@-webkit-keyframes snowing-med {
+  /* line 57, scss/_snow.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(40px, 20px, 0);
+  }
+
+  /* line 61, scss/_snow.scss */
+  25% {
+    -webkit-transform: translate3d(33px, 55px, 0);
+  }
+
+  /* line 64, scss/_snow.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(20px, 120px, 0);
+  }
+}
+
+@-webkit-keyframes snowing-sm {
+  /* line 71, scss/_snow.scss */
+  0% {
+    opacity: 1;
+    -webkit-transform: translate3d(20px, 40px, 0);
+  }
+
+  /* line 75, scss/_snow.scss */
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, 100px, 0);
+  }
+}

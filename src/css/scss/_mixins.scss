@@ -1,0 +1,22 @@
+@mixin setBorderRadius( $tl, $tr, $br, $bl ){
+	border-radius: $tl $tr $br $bl;
+    -moz-border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+}
+@mixin setRotation($deg){
+	-webkit-transform: rotateZ($deg);
+	-moz-transform: rotateZ($deg);
+    transform: rotateZ($deg);
+}
+
+@mixin setAnimation( $name, $duration, $loop, $ease ){
+	@if $ease == null { 
+		animation: $name $duration $loop;
+		-webkit-animation: $name $duration $loop;
+		-moz-animation: $name $duration $loop;
+	} @else {
+		animation: $name $duration $loop $ease;
+		-webkit-animation: $name $duration $loop $ease;
+		-moz-animation: $name $duration $loop $ease;
+	}
+}

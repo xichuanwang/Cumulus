@@ -4,3 +4,9 @@
 */cache/*
 */cache/!index.html
 */cache/!.htaccess
+
+# MAC System Files
+.DS_Store
+
+# Node Modules. You don't need these stupid.
+node_modules/

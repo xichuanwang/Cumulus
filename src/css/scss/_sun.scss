@@ -1,0 +1,124 @@
+.sun {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: -webkit-linear-gradient(top, gold 0%, orange 100%);
+    background: linear-gradient(top, gold 0%, orange 100%);
+    background: -moz-linear-gradient(top, gold 0%, orange 100%);
+    position: absolute;
+    @include setAnimation(sunshine, 3s, infinite, linear);
+
+    &.rising {
+        @include setAnimation(risingsun, 6s, infinite, linear);
+    }
+    .sunrays{
+        width: 10px;
+        height: 20px;
+        background: orange;
+        position: absolute;
+        border-radius: 3px;
+
+        &:nth-child(1) {
+            top: -50%;
+            left: 40%;
+            @include setRotation(0deg);
+        }
+
+        &:nth-child(2) {
+            left: 100%;
+            top: -25%;
+            @include setRotation(45deg);
+        }
+
+        &:nth-child(3) {
+            left: 125%;
+            top: 30%;
+            @include setRotation(90deg);
+        }
+        
+        &:nth-child(4) {
+            left: 100%;
+            top: 90%;
+            @include setRotation(135deg);
+        }
+        
+        &:nth-child(5) {
+            left: 40%;
+            top: 115%;
+            @include setRotation(0deg);
+        }
+        
+        &:nth-child(6) {
+            left: -20%;
+            top: 90%;
+            @include setRotation(45deg);
+        }
+        
+        &:nth-child(7) {
+            left: -40%;
+            top: 30%;
+            @include setRotation(90deg);
+        }
+
+        &:nth-child(8) {
+            left: -25%;
+            top: -25%;
+            @include setRotation(135deg);
+        }
+    }
+}
+
+@keyframes risingsun { 
+    0% {
+        opacity: 0;
+        top: 0px;
+        transform: rotateZ(0deg);
+    }
+    50% {
+        opacity: 1;
+        top: -35px;
+        transform: rotateZ(360deg);
+    }
+    100% {
+        opacity: 0;
+        top: 0px;
+        transform: rotateZ(720deg);
+    }
+}
+
+@-webkit-keyframes risingsun { 
+    0% {
+        opacity: 0;
+        top: 0px;
+        -webkit-transform: rotateZ(0deg);
+    }
+    50% {
+        opacity: 1;
+        top: -35px;
+        -webkit-transform: rotateZ(360deg);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: rotateZ(720deg);
+        top: 0px;   
+    }
+}
+
+@-webkit-keyframes sunshine { 
+    0% {
+        -webkit-transform: rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+
+@keyframes sunshine { 
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
